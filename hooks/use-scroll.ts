@@ -15,8 +15,8 @@ export function useScroll(): ScrollState {
 
   // Calculate scroll progress for animations
   const scrollProgress = Math.min(scrollY / (typeof window !== "undefined" ? window.innerHeight : 1000), 1)
-  const heroOpacity = 1 - scrollProgress * 0.8
-  const heroScale = 1 - scrollProgress * 0.1
+  const heroOpacity = 1 
+  const heroScale = 1 
   const contentTranslateY = typeof window !== "undefined" ? Math.max(0, window.innerHeight - scrollY) : 0
 
   // Navbar scroll effects
