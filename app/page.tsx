@@ -7,7 +7,8 @@ export default function Home() {
   const {heroOpacity, heroScale} = useScroll();
   return (
     <div>
-      <HeroSection />
+      <HeroSection opacity={heroOpacity} scale={heroScale} />
+      <div className="h-screen" />
       <h1>Hello World</h1>
     </div>
   );

@@ -1,19 +1,28 @@
 "use client";
 
-import {useCarousel} from "@/hooks/use-carousel";
 import {imageSlides} from "@/data/carousel-slides";
+import {useCarousel} from "@/hooks/use-carousel";
 import Image from "next/image";
-import {ChevronLeft, ChevronRight} from "lucide-react";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+	opacity: number;
+	scale: number;
+}
+
+export default function HeroSection({opacity, scale}: HeroSectionProps) {
 	const {currentSlide, nextSlide, prevSlide, goToSlide, pauseCarousel, playCarousel, totalSlides} = useCarousel({slides: imageSlides});
 
 	const currentSlideData = imageSlides[currentSlide];
 
 	return (
-		<div className='fixed inset-0 z-10 h-screen w-screen'>
+		<div className='fixed inset-0 z-10'>
 			<div
-				className='relative h-[100vh] w-full bg-black/80 flex items-center justify-center transition-all duration-1000 ease-in-out'
+				className='relative h-full w-full bg-black/80 flex items-center justify-center transition-all duration-1000 ease-in-out'
+				style={{
+					opacity,
+					transform: `scale(${scale})`,
+					transition: "transform 0.1s ease-out, opacity 0.3s ease-in-out",
+				}}
 				onMouseEnter={pauseCarousel}
 				onMouseLeave={playCarousel}
 			>
@@ -24,13 +33,28 @@ export default function HeroSection() {
 					style={{objectFit: "cover"}}
 					priority
 				/>
+				{/* Overlay */}
+				<div className='absolute inset-0 bg-black/40' />
 				{/* Prev Arrow */}
 				<button
 					className='absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 md:p-3 transition-all duration-200 focus:outline-none'
 					onClick={prevSlide}
 					aria-label='Previous slide'
 				>
-					<ChevronLeft className='h-10 w-10' />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						className='h-10 w-10'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+					>
+						<path
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth={2}
+							d='M15 19l-7-7 7-7'
+						/>
+					</svg>
 				</button>
 				{/* Next Arrow */}
 				<button
@@ -38,7 +62,20 @@ export default function HeroSection() {
 					onClick={nextSlide}
 					aria-label='Next slide'
 				>
-					<ChevronRight className='h-10 w-10' />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						className='h-10 w-10'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+					>
+						<path
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth={2}
+							d='M9 5l7 7-7 7'
+						/>
+					</svg>
 				</button>
 				{/* Carousel Controls */}
 				<div className='absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20'>
