@@ -4,21 +4,12 @@ import {useState, useEffect} from "react";
 import {Button} from "@/components/ui/button";
 import {Menu, X} from "lucide-react";
 import type {NavItem} from "@/types";
+import {navItems} from "@/data/navbar";
 
 interface NavbarProps {
 	opacity: number;
 	blur: number;
 }
-
-const navItems: NavItem[] = [
-	{name: "HOME", href: "#home"},
-	{name: "ABOUT", href: "#about"},
-	{name: "SERVICES", href: "#services"},
-	{name: "PORTFOLIO", href: "#portfolio"},
-	{name: "PRICING", href: "#pricing"},
-	{name: "BLOG", href: "#blog"},
-	{name: "CONTACT", href: "#contact"},
-];
 
 export default function Navbar({opacity, blur}: NavbarProps) {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
