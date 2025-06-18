@@ -88,22 +88,24 @@ export default function AboutQA({className}: SectionProps) {
 											</div>
 
 											{/* Icon */}
-											<div className='flex justify-center lg:justify-start'>
+											{/* <div className='flex justify-center lg:justify-start'>
 												<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center'>
 													<IconComponent className='h-7 w-7 text-primary' />
 												</div>
-											</div>
+											</div> */}
 										</div>
 									</div>
 
 									{/* Visual Element */}
 									<div className={`lg:col-span-1 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-										<div className='h-[300px] w-[300px] overflow-hidden rounded-lg shadow-2xl max-w-xs mx-auto'>
+										<div className='h-[300px] w-[300px] overflow-hidden rounded-lg shadow-2xl max-w-xs mx-auto relative'>
 											<img
 												src={item.image}
 												alt={`Photography representing ${item.title.toLowerCase()}`}
-												className='h-full w-full object-cover hover:scale-105 transition-transform duration-700'
+												className='h-full w-full object-cover opacity-60 hover:scale-105 transition-transform duration-700'
 											/>
+											{/* Dark overlay with gradient */}
+											<div className='absolute inset-0 bg-gradient-to-b from-transparent to-primary/60'></div>
 										</div>
 									</div>
 								</div>
