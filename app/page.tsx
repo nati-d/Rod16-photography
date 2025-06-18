@@ -5,6 +5,7 @@ import {useScroll} from "@/hooks/use-scroll";
 import WeddingShowcase from "@/components/weeding-showcase";
 import Footer from "@/components/footer";
 import Testimonials from "@/components/testimonials";
+import AboutSection from "@/components/about";
 
 export default function Home() {
 	const {heroOpacity, heroScale, contentTranslateY} = useScroll();
@@ -24,6 +25,7 @@ export default function Home() {
 				}}
 			>
 				<WeddingShowcase />
+				<AboutSection />
 				<Testimonials />
 			</div>
 		</div>
