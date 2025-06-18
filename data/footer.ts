@@ -32,10 +32,10 @@ export const footerImages = [
 ];
 
 export const footerNavItems = [
-	{name: "HOME", href: "#home"},
-	{name: "ABOUT", href: "#about"},
-	{name: "SERVICES", href: "#services"},
-	{name: "PORTFOLIO", href: "#portfolio"},
-	{name: "PRICING", href: "#pricing"},
-	{name: "CONTACT", href: "#contact"},
+	{name: "HOME", href: "/"},
+	{name: "ABOUT", href: "/about"},
+	{name: "SERVICES", href: "/services"},
+	{name: "PORTFOLIO", href: "/portfolio"},
+	{name: "PRICING", href: "/pricing"},
+	{name: "CONTACT", href: "/contact"},
 ];
