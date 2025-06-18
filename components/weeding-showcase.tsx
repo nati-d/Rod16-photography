@@ -16,10 +16,10 @@ export default function WeddingShowcase({className}: SectionProps) {
 						<span className='italic'>{weddingShowcaseHeader.subtitle}</span>
 					</h2>
 
-					<div className='mx-auto max-w-3xl space-y-4 '>
+					<div className='mx-auto max-w-3xl  '>
 						{weddingShowcaseHeader.paragraphs.map((p, i) => (
 							<p
-								className='text-base leading-relaxed'
+								className='text-xs font-light leading-relaxed text-foreground/60'
 								key={i}
 							>
 								{p}
