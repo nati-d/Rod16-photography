@@ -4,6 +4,7 @@ import HeroSection from "@/components/hero";
 import {useScroll} from "@/hooks/use-scroll";
 import WeddingShowcase from "@/components/weeding-showcase";
 import Footer from "@/components/footer";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
 	const {heroOpacity, heroScale, contentTranslateY} = useScroll();
@@ -23,8 +24,8 @@ export default function Home() {
 				}}
 			>
 				<WeddingShowcase />
+				<Testimonials />
 			</div>
-			<h1>Hello World</h1>
 		</div>
 	);
 }

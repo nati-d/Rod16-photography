@@ -46,3 +46,11 @@ export interface CarouselState {
   isPlaying: boolean
   slides: CarouselSlide[]
 }
+
+export interface Testimonial {
+    id: number
+    clientNames: string
+    location: string
+    image: string
+    testimonial: string
+}
