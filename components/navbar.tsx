@@ -52,13 +52,13 @@ export default function Navbar({opacity, blur}: NavbarProps) {
 								className='text-[2.5rem] font-bold text-primary leading-none tracking-tight'
 								style={{fontFamily: "Playfair Display, serif"}}
 							>
-								VL
+								RP
 							</span>
 							<span
 								className='text-primary text-lg tracking-[0.3em] font-light mt-1'
 								style={{fontFamily: "Playfair Display, serif"}}
 							>
-								VILLALI
+								ROD16 PHOTOGRAPHY
 							</span>
 						</div>
 						{/* Right Info */}
@@ -74,26 +74,27 @@ export default function Navbar({opacity, blur}: NavbarProps) {
 								className='text-[2.5rem] font-bold text-primary leading-none tracking-tight'
 								style={{fontFamily: "Playfair Display, serif"}}
 							>
-								VL
+								RP
 							</span>
-							<span
+							{/* <span
 								className='text-primary text-lg tracking-[0.3em] font-light mt-1'
 								style={{fontFamily: "Playfair Display, serif"}}
 							>
-								VILLALI
-							</span>
+								ROD16 PHOTOGRAPHY
+							</span> */}
 						</div>
 						{/* Hamburger Menu Right */}
-						<div className='flex items-center'>
-							<Button
-								variant='ghost'
-								size='icon'
-								className='text-primary hover:bg-primary/10'
-								onClick={toggleMobileMenu}
-								aria-label='Open menu'
-							>
-								{isMobileMenuOpen ? <X className='h-8 w-8' /> : <Menu className='h-8 w-8' />}
-							</Button>
+						<div
+							className='flex items-center h-14 w-14 justify-center text-primary cursor-pointer select-none'
+							onClick={toggleMobileMenu}
+							aria-label='Open menu'
+							role='button'
+							tabIndex={0}
+							onKeyDown={(e) => {
+								if (e.key === "Enter" || e.key === " ") toggleMobileMenu();
+							}}
+						>
+							{isMobileMenuOpen ? <X className='h-12 w-12' /> : <Menu className='h-12 w-12' />}
 						</div>
 					</div>
 					{/* Mobile: Info Text Below Logo */}
@@ -133,43 +134,49 @@ export default function Navbar({opacity, blur}: NavbarProps) {
 			</div>
 
 			{/* Mobile Navigation Menu */}
-			{isMobileMenuOpen && (
-				<div className='fixed inset-0 z-40 md:hidden'>
-					{/* Backdrop */}
-					<div
-						className='fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity'
-						onClick={toggleMobileMenu}
-					/>
-					{/* Menu Panel */}
-					<div className='fixed right-0 top-0 h-full w-[280px] bg-background shadow-xl transform transition-transform duration-300 ease-in-out'>
-						<div className='flex h-16 items-center justify-end px-4 border-b border-primary/10'>
-							<Button
-								variant='ghost'
-								size='sm'
-								className='text-primary hover:bg-primary/10'
-								onClick={toggleMobileMenu}
-								aria-label='Close menu'
-							>
-								<X className='h-6 w-6' />
-							</Button>
+			<div className={`fixed inset-0 z-40 md:hidden pointer-events-none`}>
+				{/* Backdrop */}
+				<div
+					className={`fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
+						isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0"
+					}`}
+					onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}
+				/>
+				{/* Sidebar Panel */}
+				<div
+					className={`fixed right-0 top-0 h-full w-[280px] bg-background shadow-xl transition-transform duration-300 ease-in-out
+						${isMobileMenuOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"}`}
+				>
+					<div className='flex h-16 items-center justify-end px-4 border-b border-primary/10'>
+						<div
+							className='flex items-center h-14 w-14 justify-center text-primary cursor-pointer select-none'
+							onClick={toggleMobileMenu}
+							aria-label='Close menu'
+							role='button'
+							tabIndex={0}
+							onKeyDown={(e) => {
+								if (e.key === "Enter" || e.key === " ") toggleMobileMenu();
+							}}
+						>
+							<X className='h-12 w-12' />
 						</div>
-						<nav className='px-4 py-6'>
-							<div className='space-y-6'>
-								{navItems.map((item) => (
-									<a
-										key={item.name}
-										href={item.href}
-										className='block text-base font-medium tracking-wider text-foreground/80 transition-colors duration-200 hover:text-primary'
-										onClick={toggleMobileMenu}
-									>
-										{item.name}
-									</a>
-								))}
-							</div>
-						</nav>
 					</div>
+					<nav className='px-4 py-6'>
+						<div className='space-y-6'>
+							{navItems.map((item) => (
+								<a
+									key={item.name}
+									href={item.href}
+									className='block text-base font-medium tracking-wider text-foreground/80 transition-colors duration-200 hover:text-primary'
+									onClick={toggleMobileMenu}
+								>
+									{item.name}
+								</a>
+							))}
+						</div>
+					</nav>
 				</div>
-			)}
+			</div>
 		</>
 	);
 }
