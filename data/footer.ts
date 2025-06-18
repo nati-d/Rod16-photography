@@ -1,33 +1,33 @@
 export const footerImages = [
 	{
 		id: 1,
-		src: "https://images.pexels.com/photos/2085523/pexels-photo-2085523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "Bridesmaids in lavender dresses walking together",
+		src: "https://images.pexels.com/photos/2917380/pexels-photo-2917380.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+		alt: "Man and woman in white dress and suit",
 	},
 	{
 		id: 2,
-		src: "https://images.pexels.com/photos/2085523/pexels-photo-2085523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "Wedding ceremony under stone archway",
+		src: "https://images.pexels.com/photos/1034356/pexels-photo-1034356.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+		alt: "Bride and groom laying on pier",
 	},
 	{
 		id: 3,
-		src: "https://images.pexels.com/photos/2085523/pexels-photo-2085523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "Romantic couple portrait with golden hour lighting",
+		src: "https://images.pexels.com/photos/1024969/pexels-photo-1024969.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+		alt: "Man and woman standing at seashore",
 	},
 	{
 		id: 4,
-		src: "https://images.pexels.com/photos/2085523/pexels-photo-2085523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "Couple walking on beach at sunset",
+		src: "https://images.pexels.com/photos/2253838/pexels-photo-2253838.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+		alt: "Woman putting wedding ring on groom's finger",
 	},
 	{
 		id: 5,
-		src: "https://images.pexels.com/photos/2085523/pexels-photo-2085523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "Bride and groom portrait on wooden dock",
+		src: "https://images.pexels.com/photos/1630860/pexels-photo-1630860.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+		alt: "Bride and groom kissing near tree",
 	},
 	{
 		id: 6,
-		src: "https://images.pexels.com/photos/2085523/pexels-photo-2085523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "Wedding detail shot of bridal shoes",
+		src: "https://images.pexels.com/photos/1295995/pexels-photo-1295995.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+		alt: "Man and woman wearing wedding outfits",
 	},
 ];
 
