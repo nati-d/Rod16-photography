@@ -1,6 +1,10 @@
+"use client";
 import {Heart, Camera, Award, Lightbulb, Star, Quote} from "lucide-react";
 import type {SectionProps} from "@/types";
 import Image from "next/image";
+import {useState} from "react";
+import {Button} from "@/components/ui/button";
+import {ChevronLeft, ChevronRight} from "lucide-react";
 
 const storyHighlights = [
 	{
@@ -47,12 +51,51 @@ const philosophyPoints = [
 	"Wedding photography is about preserving legacy, not just taking pictures",
 ];
 
+interface PhilosophySlide {
+	id: number;
+	backgroundImage: string;
+	header: string;
+	title: string;
+	buttonText: string;
+}
+
+const philosophySlides: PhilosophySlide[] = [
+	{
+		id: 1,
+		backgroundImage: "https://images.pexels.com/photos/1603884/pexels-photo-1603884.jpeg",
+		header: "A FEW THINGS I BELIEVE:",
+		title: "Every couple has a unique love story that deserves to be told beautifully.",
+		buttonText: "View Next",
+	},
+	{
+		id: 2,
+		backgroundImage: "https://images.pexels.com/photos/169211/pexels-photo-169211.jpeg",
+		header: "A FEW THINGS I BELIEVE:",
+		title: "Authentic moments happen when people feel comfortable and natural.",
+		buttonText: "View Next",
+	},
+	{
+		id: 3,
+		backgroundImage: "https://images.pexels.com/photos/574011/pexels-photo-574011.jpeg",
+		header: "A FEW THINGS I BELIEVE:",
+		title: "The best photographs blend artistic vision with genuine emotion.",
+		buttonText: "View Next",
+	},
+	{
+		id: 4,
+		backgroundImage: "https://images.pexels.com/photos/45718/pexels-photo-45718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		header: "A FEW THINGS I BELIEVE:",
+		title: "Wedding photography is about preserving legacy, not just taking pictures.",
+		buttonText: "View Next",
+	},
+];
+
 export default function AboutQA({className}: SectionProps) {
 	return (
 		<section className={`bg-background px-4 py-20 sm:px-6 lg:px-8 ${className || ""}`}>
-			<div className='mx-auto container'>
+			<div className='mx-auto '>
 				{/* Section Header */}
-				<div className='text-center mb-20'>
+				<div className='text-center mb-20 container'>
 					<div className='inline-flex items-center gap-4 mb-6'>
 						<div className='h-px w-12 bg-primary/20'></div>
 						<span className='text-xs font-medium tracking-[0.3em] text-foreground/60 uppercase'>My Story</span>
@@ -103,6 +146,11 @@ export default function AboutQA({className}: SectionProps) {
 							);
 						})}
 					</div>
+				</div>
+
+				{/* Philosophy Carousel Section */}
+				<div className='mb-20 w-full'>
+					<PhilosophyCarousel />
 				</div>
 
 				{/* Philosophy Section */}
@@ -172,6 +220,105 @@ export default function AboutQA({className}: SectionProps) {
 							<div className='h-px w-12 bg-primary/20'></div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
+
+function PhilosophyCarousel() {
+	const [currentSlide, setCurrentSlide] = useState(0);
+
+	const nextSlide = () => {
+		setCurrentSlide((prev) => (prev + 1) % philosophySlides.length);
+	};
+
+	const prevSlide = () => {
+		setCurrentSlide((prev) => (prev - 1 + philosophySlides.length) % philosophySlides.length);
+	};
+
+	const goToSlide = (index: number) => {
+		setCurrentSlide(index);
+	};
+
+	return (
+		<section className='relative h-[60vh] w-full overflow-hidden'>
+			{/* Background Image */}
+			<div className='absolute inset-0'>
+				<Image
+					src={philosophySlides[currentSlide].backgroundImage || "/placeholder.svg"}
+					alt='Wedding photography background'
+					fill
+					className='object-cover'
+					priority
+				/>
+			</div>
+
+			{/* Content Card - Positioned like in the original */}
+			<div className='relative z-10 h-full flex items-center justify-end pr-8 md:pr-16 lg:pr-24'>
+				<div className='bg-background p-12 md:p-16 max-w-2xl shadow-lg'>
+					{/* Header */}
+					<p className='text-xs md:text-sm text-foreground/60 tracking-[0.2em] uppercase mb-8 font-light'>{philosophySlides[currentSlide].header}</p>
+
+					{/* Main Title */}
+					<h2 className='text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-12'>{philosophySlides[currentSlide].title}</h2>
+
+					{/* Action Button - Positioned to bottom right like original */}
+					<div className='flex justify-end'>
+						<Button
+							variant='outline'
+							className='border-primary text-foreground hover:opacity-80 px-6 py-2 text-sm font-light tracking-wide'
+							onClick={nextSlide}
+						>
+							{philosophySlides[currentSlide].buttonText}
+						</Button>
+					</div>
+				</div>
+			</div>
+
+			{/* Navigation Controls */}
+			<div className='absolute left-6 top-1/2 transform -translate-y-1/2 z-20'>
+				<Button
+					variant='ghost'
+					size='icon'
+					onClick={prevSlide}
+					className='bg-background/90 hover:bg-background text-foreground rounded-full shadow-lg'
+				>
+					<ChevronLeft className='h-5 w-5' />
+				</Button>
+			</div>
+
+			<div className='absolute right-6 top-1/2 transform -translate-y-1/2 z-20'>
+				<Button
+					variant='ghost'
+					size='icon'
+					onClick={nextSlide}
+					className='bg-background/90 hover:bg-background text-foreground rounded-full shadow-lg'
+				>
+					<ChevronRight className='h-5 w-5' />
+				</Button>
+			</div>
+
+			{/* Slide Indicators */}
+			<div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20'>
+				<div className='flex space-x-3'>
+					{philosophySlides.map((_, index) => (
+						<button
+							key={index}
+							onClick={() => goToSlide(index)}
+							className={`w-2 h-2 rounded-full transition-all duration-300 ${
+								index === currentSlide ? "bg-background" : "bg-background/50 hover:bg-background/75"
+							}`}
+							aria-label={`Go to slide ${index + 1}`}
+						/>
+					))}
+				</div>
+			</div>
+
+			{/* Slide Counter */}
+			<div className='absolute top-8 right-8 z-20'>
+				<div className='bg-background/90 px-3 py-1 text-xs text-foreground font-light tracking-wide'>
+					{String(currentSlide + 1).padStart(2, "0")} / {String(philosophySlides.length).padStart(2, "0")}
 				</div>
 			</div>
 		</section>
