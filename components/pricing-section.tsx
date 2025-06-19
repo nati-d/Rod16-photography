@@ -162,7 +162,7 @@ export default function PricingSection() {
 				</div>
 
 				{/* Booking Info */}
-				<div className='text-center'>
+				{/* <div className='text-center'>
 					<div className='bg-background/80 backdrop-blur-sm rounded-lg p-12 max-w-3xl mx-auto border border-secondary/20'>
 						<div className='inline-flex items-center gap-4 mb-6'>
 							<div className='h-px w-8 bg-primary/20'></div>
@@ -192,7 +192,7 @@ export default function PricingSection() {
 							Request Custom Quote
 						</Button>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
