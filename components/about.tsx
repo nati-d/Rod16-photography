@@ -33,7 +33,7 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 							<div className='aspect-[4/5] overflow-hidden rounded-lg shadow-2xl'>
 								<img
 									src='https://images.pexels.com/photos/6948652/pexels-photo-6948652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-									alt='Villa Li, DC Wedding Photographer, standing in a European courtyard wearing a beige coat'
+									alt='Zadig Shiferaw, Professional Photographer & Visual Storyteller, standing in a professional setting'
 									className='h-full w-full object-cover hover:scale-105 transition-transform duration-700'
 								/>
 							</div>
@@ -41,9 +41,7 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 							{/* Floating Quote Card */}
 							<div className='absolute -bottom-8 -right-8 bg-background p-8 rounded-lg shadow-xl border border-secondary/20 max-w-xs'>
 								<Quote className='h-8 w-8 text-primary mb-4' />
-								<blockquote className='text-base italic text-foreground/70 leading-relaxed'>
-									"Every love story deserves to be told beautifully"
-								</blockquote>
+								<blockquote className='text-base italic text-foreground/70 leading-relaxed'>"Capturing love, light, and legacy"</blockquote>
 							</div>
 						</div>
 
@@ -51,31 +49,40 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 						<div className='space-y-8'>
 							<div>
 								<h2 className='text-4xl font-light tracking-wide text-foreground mb-4'>
-									HELLO, I'M <span className='text-primary'>VILLA LI</span>
+									HELLO, I'M <span className='text-primary'>ZADIG SHIFERAW</span>
 								</h2>
 								<div className='h-px w-16 bg-primary/30 mb-6'></div>
-								<p className='text-sm font-medium tracking-[0.2em] text-foreground/60 uppercase mb-2'>DC Wedding Photographer</p>
-								<p className='text-foreground/60 font-light mb-6'>Serving Virginia, Maryland & Worldwide</p>
+								<p className='text-sm font-medium tracking-[0.2em] text-foreground/60 uppercase mb-2'>Photographer & Visual Storyteller</p>
+									<p className='text-foreground/60 font-light mb-6'>Serving Virginia, Maryland & Worldwide</p>
 							</div>
 
 							<div className='space-y-6 text-base leading-relaxed text-foreground/70'>
 								<p className='text-lg font-light leading-relaxed'>
-									Hi, and welcome! I'm so glad you're here. With a master's in the visual arts and over 10 years of experience, I have an eye
-									for light, composition, and meaning.
+									I discovered my passion for photography by capturing special moments in my community. Seeing the impact of my work inspired
+									me to pursue it professionally, turning a creative gift into a meaningful career.
 								</p>
 
 								<p>
-									My style blends <em className='text-foreground font-medium'>timeless documentary moments</em> with refined editorial
-									composition, creating images that feel both authentic and artfully crafted.
+									With over a decade of experience in photography, I specialize in capturing meaningful moments through weddings, portraits,
+									and lifestyle imagery. My approach blends{" "}
+									<em className='text-foreground font-medium'>technical expertise with a creative eye</em>, producing elegant, story-driven
+									visuals that truly connect.
 								</p>
 
 								<p>
-									My approach is calm, thoughtful, and quietly intentional. I'm here to guide you gently and curate a collection of images
-									that feel artful without being messy; composed without being stiff.
+									My photography style is clean, emotional, and storytelling-focused. Over the years, it has evolved to become more refined
+									and intentional, blending natural light with artistic composition to capture timeless moments.
+								</p>
+
+								<p>
+									Over the years, I've worked with diverse clients across various cultures and events, building a strong reputation for
+									professionalism and consistency. I offer detail-focused services both locally and internationally, delivering timeless
+									images that truly connect.
 								</p>
 
 								<p className='text-lg font-light italic text-foreground/70 border-l-4 border-primary/20 pl-6'>
-									Your day will go by quickly. My job is to help you slow it down.
+									The most rewarding part of my photography career is seeing the joy on my clients' faces when they receive their
+									photos—knowing I've helped preserve a moment they'll treasure forever.
 								</p>
 							</div>
 
@@ -93,7 +100,7 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 										<Users className='h-6 w-6 text-primary' />
 									</div>
 									<div className='text-2xl font-light text-foreground'>500+</div>
-									<div className='text-sm text-foreground/60'>Couples Served</div>
+									<div className='text-sm text-foreground/60'>Clients Served</div>
 								</div>
 								<div className='text-center'>
 									<div className='flex justify-center mb-2'>
@@ -110,7 +117,7 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 		);
 	}
 
-	// Original homepage version
+	// Homepage version - More concise
 	return (
 		<section
 			id='about'
@@ -128,7 +135,7 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 							<div className='aspect-[4/5] overflow-hidden rounded-sm shadow-2xl h-full'>
 								<img
 									src='https://images.pexels.com/photos/6948652/pexels-photo-6948652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-									alt='Villa Li, DC Wedding Photographer, standing in a European courtyard wearing a beige coat'
+									alt='Zadig Shiferaw, Professional Photographer & Visual Storyteller, standing in a professional setting'
 									className='h-full w-full object-cover hover:scale-105 transition-transform duration-700'
 								/>
 							</div>
@@ -136,9 +143,7 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 							{/* Floating Quote Card */}
 							<div className='absolute -bottom-6 -right-6 bg-background p-6 rounded-sm shadow-xl border border-secondary/10 max-w-xs'>
 								<Quote className='h-6 w-6 text-foreground/60 mb-3' />
-								<blockquote className='text-sm italic text-foreground/60 leading-relaxed'>
-									"Every love story deserves to be told beautifully"
-								</blockquote>
+								<blockquote className='text-sm italic text-foreground/60 leading-relaxed'>"Capturing love, light, and legacy"</blockquote>
 							</div>
 						</div>
 					</div>
@@ -150,36 +155,36 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 							<h2 className='text-5xl font-extralight tracking-wide text-stone-800 sm:text-6xl lg:text-7xl mb-4 leading-tight'>
 								HELLO,
 								<br />
-								<span className='bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'>I'M VILLA LI</span>
+								<span className='bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'>I'M ZADIG SHIFERAW</span>
 							</h2>
 							<div className='h-px w-24 bg-gradient-to-r from-foreground/60 to-transparent'></div>
 						</div>
 
 						{/* Enhanced Subheading */}
 						<div className='mb-10'>
-							<p className='text-sm font-medium tracking-[0.2em] text-foreground/60 uppercase mb-4'>DC Wedding Photographer</p>
+							<p className='text-sm font-medium tracking-[0.2em] text-foreground/60 uppercase mb-4'>Photographer & Visual Storyteller</p>
 							<p className='text-foreground/60 font-light'>Serving Virginia, Maryland & Worldwide</p>
 						</div>
 
-						{/* Enhanced Introduction */}
+						{/* Enhanced Introduction - More concise for homepage */}
 						<div className='space-y-6 text-base leading-relaxed text-foreground/60 mb-12'>
 							<p className='text-lg font-light leading-relaxed'>
-								Hi, and welcome! I'm so glad you're here. With a master's in the visual arts and over 10 years of experience, I have an eye for
-								light, composition, and meaning.
+								With over a decade of experience in photography, I specialize in capturing meaningful moments through weddings, portraits, and
+								lifestyle imagery.
 							</p>
 
 							<p>
-								My style blends <em className='text-foreground font-medium'>timeless documentary moments</em> with refined editorial
-								composition, creating images that feel both authentic and artfully crafted.
+								My approach blends <em className='text-foreground font-medium'>technical expertise with a creative eye</em>, producing elegant,
+								story-driven visuals that truly connect.
 							</p>
 
 							<p>
-								My approach is calm, thoughtful, and quietly intentional. I'm here to guide you gently and curate a collection of images that
-								feel artful without being messy; composed without being stiff.
+								Over the years, I've worked with diverse clients across various cultures and events, building a strong reputation for
+								professionalism and consistency. I offer detail-focused services both locally and internationally.
 							</p>
 
 							<p className='text-lg font-light italic text-foreground/60 border-l-2 border-primary/10 pl-6'>
-								Your day will go by quickly. My job is to help you slow it down.
+								Every frame carefully composed. Deeply felt.
 							</p>
 						</div>
 

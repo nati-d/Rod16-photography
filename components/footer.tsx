@@ -76,7 +76,7 @@ export default function Footer({className}: SectionProps) {
 			<div className='px-4 pb-8 sm:px-6 lg:px-8'>
 				<div className='mx-auto container'>
 					<div className='flex flex-wrap items-center justify-center gap-4 text-sm text-white/80 sm:gap-8'>
-						<span>Washington D.C.</span>
+						<span>Serving Virginia, Maryland & Worldwide</span>
 						<div className='hidden h-4 w-px bg-background sm:block'></div>
 						<a
 							href='mailto:rod16zedo@gmail.com'
