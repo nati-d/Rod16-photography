@@ -34,9 +34,9 @@ export default function Navbar({opacity, blur}: NavbarProps) {
 					{/* Desktop: info left, logo center, info right. Mobile: logo center, hamburger right, info below */}
 					<div className='hidden md:flex items-center justify-between h-20'>
 						{/* Left Info */}
-						<div className='text-xs tracking-wider text-foreground/80 whitespace-nowrap font-[Playfair Display,serif] italic uppercase'>
+						{/* <div className='text-xs tracking-wider text-foreground/80 whitespace-nowrap font-[Playfair Display,serif] italic uppercase'>
 							WEDDING PHOTOGRAPHER BASED IN NORTHERN VA
-						</div>
+						</div> */}
 						{/* Logo Centered */}
 						<div className='flex flex-col items-center mx-auto'>
 							<span
@@ -53,9 +53,9 @@ export default function Navbar({opacity, blur}: NavbarProps) {
 							</span>
 						</div>
 						{/* Right Info */}
-						<div className='text-xs tracking-wider text-foreground/80 whitespace-nowrap font-[Playfair Display,serif] italic uppercase'>
+						{/* <div className='text-xs tracking-wider text-foreground/80 whitespace-nowrap font-[Playfair Display,serif] italic uppercase'>
 							SERVING THE DMV AND WORLDWIDE.ESTD. 2016
-						</div>
+						</div> */}
 					</div>
 					{/* Mobile: logo left, hamburger right, info below */}
 					<div className='flex md:hidden items-center justify-between relative'>
@@ -90,10 +90,10 @@ export default function Navbar({opacity, blur}: NavbarProps) {
 					</div>
 					{/* Mobile: Info Text Below Logo */}
 					<div className='md:hidden mt-2 mb-2 text-center'>
-						<div className='font-[Playfair Display,serif] italic tracking-widest text-[0.85rem] text-foreground/80 leading-snug'>
+						{/* <div className='font-[Playfair Display,serif] italic tracking-widest text-[0.85rem] text-foreground/80 leading-snug'>
 							<div className='uppercase'>WEDDING PHOTOGRAPHER BASED IN NORTHERN VA</div>
 							<div className='uppercase'>SERVING THE DMV AND WORLDWIDE.ESTD. 2016</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
