@@ -105,7 +105,7 @@ export default function ServicesGrid() {
 										<div className='flex items-center justify-between'>
 											<span className='text-sm font-medium text-primary uppercase tracking-wider'>{service.price}</span>
 											<a
-												href='#pricing'
+												href='/contact'
 												className='text-sm text-foreground hover:text-primary transition-colors border-b border-foreground/20 hover:border-primary/40 pb-1'
 											>
 												Learn More

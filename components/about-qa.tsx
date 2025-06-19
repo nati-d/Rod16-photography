@@ -212,7 +212,7 @@ export default function AboutQA({className}: SectionProps) {
 						<div className='inline-flex items-center gap-4'>
 							<div className='h-px w-12 bg-primary/20'></div>
 							<a
-								href='#contact'
+								href='/contact'
 								className='text-sm font-medium tracking-wider text-foreground/60 transition-colors duration-200 hover:text-foreground uppercase'
 							>
 								Start Your Journey
