@@ -1,10 +1,10 @@
 export const weddingShowcaseHeader = {
-	title: `Timeless Storytelling,`,
-	subtitle: `Artfully Captured`,
+	title: `Every frame.`,
+	subtitle: `Carefully composed. Deeply felt.`,
 	paragraphs: [
-		`I photograph weddings across Washington D.C., Virginia, and Maryland with a calm, natural approach`,
-		`that lets real moments lead the way. Timeless without being cliché.`,
-		`You'll feel relaxed in front of the camera, knowing every moment is captured with care and style.`,
+		`Every love story deserves to be told beautifully. I weave light and emotion into every frame,`,
+		`creating images that feel both timeless and deeply personal. From intimate moments to grand celebrations,`,
+		`I capture the authentic essence of your journey, preserving memories that will be cherished for generations.`,
 	],
 };
 
