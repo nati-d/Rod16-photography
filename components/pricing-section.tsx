@@ -71,7 +71,7 @@ export default function PricingSection() {
 		>
 			<div className='mx-auto container'>
 				{/* Section Header */}
-				<div className='text-center mb-16'>
+				<div className='text-center mb-20'>
 					<div className='inline-flex items-center gap-4 mb-6'>
 						<div className='h-px w-12 bg-primary/20'></div>
 						<span className='text-xs font-medium tracking-[0.3em] text-foreground/60 uppercase'>Investment</span>
@@ -85,12 +85,12 @@ export default function PricingSection() {
 				</div>
 
 				{/* Pricing Grid */}
-				<div className='grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto'>
+				<div className='grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto mb-20'>
 					{packages.map((pkg, index) => (
 						<div
 							key={index}
-							className={`relative bg-background rounded-lg p-8 shadow-sm border ${
-								pkg.popular ? "border-primary/30 shadow-lg scale-105" : "border-secondary/20"
+							className={`relative bg-background rounded-lg p-8 shadow-sm border transition-all duration-300 hover:shadow-lg ${
+								pkg.popular ? "border-primary/30 shadow-lg scale-105" : "border-secondary/20 hover:border-primary/20"
 							}`}
 						>
 							{/* Popular Badge */}
@@ -128,11 +128,11 @@ export default function PricingSection() {
 							{/* CTA Button */}
 							<div className='text-center'>
 								<Button
-									className={`w-full ${
+									className={`w-full transition-all duration-200 ${
 										pkg.popular
 											? "bg-primary text-background hover:bg-primary/90"
 											: "bg-transparent border border-primary text-primary hover:bg-primary hover:text-background"
-									} transition-colors duration-200`}
+									}`}
 								>
 									{pkg.popular ? "Choose Premium" : `Choose ${pkg.name}`}
 								</Button>
@@ -142,40 +142,52 @@ export default function PricingSection() {
 				</div>
 
 				{/* Additional Services */}
-				<div className='mt-16'>
-					<h3 className='text-2xl font-light text-foreground text-center mb-8'>Additional Services</h3>
-					<div className='grid gap-6 md:grid-cols-3 max-w-4xl mx-auto'>
+				<div className='mb-20'>
+					<div className='text-center mb-12'>
+						<h3 className='text-2xl font-light text-foreground mb-4'>Additional Services</h3>
+						<div className='h-px w-16 bg-primary/20 mx-auto'></div>
+					</div>
+					<div className='grid gap-8 md:grid-cols-3 max-w-4xl mx-auto'>
 						{additionalServices.map((service, index) => (
 							<div
 								key={index}
-								className='bg-background rounded-lg p-6 border border-secondary/20 text-center'
+								className='bg-background rounded-lg p-8 border border-secondary/20 text-center hover:border-primary/20 transition-all duration-300 hover:shadow-lg'
 							>
-								<h4 className='text-lg font-light text-foreground mb-2'>{service.name}</h4>
-								<div className='text-2xl font-light text-primary mb-2'>{service.price}</div>
-								<p className='text-foreground/60 text-sm'>{service.description}</p>
+								<h4 className='text-xl font-light text-foreground mb-3'>{service.name}</h4>
+								<div className='text-3xl font-light text-primary mb-4'>{service.price}</div>
+								<p className='text-foreground/70 text-sm leading-relaxed'>{service.description}</p>
 							</div>
 						))}
 					</div>
 				</div>
 
 				{/* Booking Info */}
-				<div className='text-center mt-16'>
-					<div className='bg-background/80 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto border border-secondary/20'>
-						<h3 className='text-xl font-light text-foreground mb-4'>Booking & Payment</h3>
-						<p className='text-foreground/70 mb-6'>
+				<div className='text-center'>
+					<div className='bg-background/80 backdrop-blur-sm rounded-lg p-12 max-w-3xl mx-auto border border-secondary/20'>
+						<div className='inline-flex items-center gap-4 mb-6'>
+							<div className='h-px w-8 bg-primary/20'></div>
+							<span className='text-xs font-medium tracking-[0.3em] text-foreground/60 uppercase'>Booking Information</span>
+							<div className='h-px w-8 bg-primary/20'></div>
+						</div>
+						<h3 className='text-2xl font-light text-foreground mb-6'>Booking & Payment</h3>
+						<p className='text-foreground/70 mb-8 leading-relaxed max-w-2xl mx-auto'>
 							To secure your session, a 25% deposit is required upon booking. Flexible payment plans are available for select packages.
 						</p>
-						<div className='space-y-4'>
-							<p className='text-sm text-foreground/60'>
-								<strong>Destination Weddings:</strong> Custom packages available upon request
-							</p>
-							<p className='text-sm text-foreground/60'>
-								<strong>Custom Projects:</strong> Contact me directly for a personalized quote
-							</p>
+						<div className='grid md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto'>
+							<div className='text-left'>
+								<p className='text-sm text-foreground/60'>
+									<strong className='text-foreground'>Destination Weddings:</strong> Custom packages available upon request
+								</p>
+							</div>
+							<div className='text-left'>
+								<p className='text-sm text-foreground/60'>
+									<strong className='text-foreground'>Custom Projects:</strong> Contact me directly for a personalized quote
+								</p>
+							</div>
 						</div>
 						<Button
 							variant='outline'
-							className='border-primary text-primary hover:bg-primary hover:text-background mt-6'
+							className='border-primary text-primary hover:bg-primary hover:text-background transition-all duration-200'
 						>
 							Request Custom Quote
 						</Button>
