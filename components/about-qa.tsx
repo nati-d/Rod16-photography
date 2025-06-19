@@ -242,7 +242,7 @@ function PhilosophyCarousel() {
 	};
 
 	return (
-		<section className='relative h-[60vh] w-full overflow-hidden'>
+		<section className='relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen w-full overflow-hidden'>
 			{/* Background Image */}
 			<div className='absolute inset-0'>
 				<Image
@@ -254,20 +254,24 @@ function PhilosophyCarousel() {
 				/>
 			</div>
 
-			{/* Content Card - Positioned like in the original */}
-			<div className='relative z-10 h-full flex items-center justify-end pr-8 md:pr-16 lg:pr-24'>
-				<div className='bg-background p-12 md:p-16 max-w-2xl shadow-lg'>
+			{/* Content Card - Responsive positioning */}
+			<div className='relative z-10 h-full flex items-center justify-center px-4 sm:px-6 md:justify-end md:pr-8 lg:pr-16 xl:pr-24'>
+				<div className='bg-background p-6 sm:p-8 md:p-12 lg:p-16 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl shadow-lg'>
 					{/* Header */}
-					<p className='text-xs md:text-sm text-foreground/60 tracking-[0.2em] uppercase mb-8 font-light'>{philosophySlides[currentSlide].header}</p>
+					<p className='text-xs sm:text-sm text-foreground/60 tracking-[0.2em] uppercase mb-4 sm:mb-6 md:mb-8 font-light'>
+						{philosophySlides[currentSlide].header}
+					</p>
 
 					{/* Main Title */}
-					<h2 className='text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-12'>{philosophySlides[currentSlide].title}</h2>
+					<h2 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-foreground leading-relaxed mb-6 sm:mb-8 md:mb-12'>
+						{philosophySlides[currentSlide].title}
+					</h2>
 
-					{/* Action Button - Positioned to bottom right like original */}
+					{/* Action Button */}
 					<div className='flex justify-end'>
 						<Button
 							variant='outline'
-							className='border-primary text-foreground hover:opacity-80 px-6 py-2 text-sm font-light tracking-wide'
+							className='border-primary text-foreground hover:opacity-80 px-4 sm:px-6 py-2 text-xs sm:text-sm font-light tracking-wide'
 							onClick={nextSlide}
 						>
 							{philosophySlides[currentSlide].buttonText}
@@ -276,37 +280,37 @@ function PhilosophyCarousel() {
 				</div>
 			</div>
 
-			{/* Navigation Controls */}
-			<div className='absolute left-6 top-1/2 transform -translate-y-1/2 z-20'>
+			{/* Navigation Controls - Responsive positioning */}
+			<div className='absolute left-2 sm:left-4 md:left-6 top-1/2 transform -translate-y-1/2 z-20'>
 				<Button
 					variant='ghost'
 					size='icon'
 					onClick={prevSlide}
-					className='bg-background/90 hover:bg-background text-foreground rounded-full shadow-lg'
+					className='bg-background/90 hover:bg-background text-foreground rounded-full shadow-lg w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'
 				>
-					<ChevronLeft className='h-5 w-5' />
+					<ChevronLeft className='h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5' />
 				</Button>
 			</div>
 
-			<div className='absolute right-6 top-1/2 transform -translate-y-1/2 z-20'>
+			<div className='absolute right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-20'>
 				<Button
 					variant='ghost'
 					size='icon'
 					onClick={nextSlide}
-					className='bg-background/90 hover:bg-background text-foreground rounded-full shadow-lg'
+					className='bg-background/90 hover:bg-background text-foreground rounded-full shadow-lg w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'
 				>
-					<ChevronRight className='h-5 w-5' />
+					<ChevronRight className='h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5' />
 				</Button>
 			</div>
 
-			{/* Slide Indicators */}
-			<div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20'>
-				<div className='flex space-x-3'>
+			{/* Slide Indicators - Responsive positioning */}
+			<div className='absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20'>
+				<div className='flex space-x-2 sm:space-x-3'>
 					{philosophySlides.map((_, index) => (
 						<button
 							key={index}
 							onClick={() => goToSlide(index)}
-							className={`w-2 h-2 rounded-full transition-all duration-300 ${
+							className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
 								index === currentSlide ? "bg-background" : "bg-background/50 hover:bg-background/75"
 							}`}
 							aria-label={`Go to slide ${index + 1}`}
@@ -315,9 +319,9 @@ function PhilosophyCarousel() {
 				</div>
 			</div>
 
-			{/* Slide Counter */}
-			<div className='absolute top-8 right-8 z-20'>
-				<div className='bg-background/90 px-3 py-1 text-xs text-foreground font-light tracking-wide'>
+			{/* Slide Counter - Responsive positioning */}
+			<div className='absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 z-20'>
+				<div className='bg-background/90 px-2 sm:px-3 py-1 text-xs text-foreground font-light tracking-wide'>
 					{String(currentSlide + 1).padStart(2, "0")} / {String(philosophySlides.length).padStart(2, "0")}
 				</div>
 			</div>
