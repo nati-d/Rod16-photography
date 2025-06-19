@@ -59,45 +59,80 @@ export default function ProcessSection() {
 
 				{/* Process Steps */}
 				<div className='max-w-7xl mx-auto'>
-					<div className='grid gap-y-16 gap-x-8 md:grid-cols-2 lg:grid-cols-4'>
-						{processSteps.map((step, index) => {
-							const IconComponent = step.icon;
-							return (
-								<div
-									key={index}
-									className='relative'
-								>
-									{/* Step Number */}
-									<div className='text-6xl md:text-7xl font-light text-primary/10 absolute -top-4 -left-4'>
-										{String(index + 1).padStart(2, "0")}
-									</div>
-
-									{/* Content */}
-									<div className='relative z-10'>
-										{/* Icon */}
-										<div className='flex justify-center mb-6'>
-											<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center'>
-												<IconComponent className='h-8 w-8 text-primary' />
-											</div>
+					<div className='grid gap-y-16 gap-x-8 md:grid-cols-2 lg:grid-cols-4 justify-items-center'>
+						<div className='md:col-span-2 lg:col-span-4 flex justify-center gap-8 lg:gap-x-16'>
+							{processSteps.slice(0, 4).map((step, index) => {
+								const IconComponent = step.icon;
+								return (
+									<div
+										key={index}
+										className='relative w-full max-w-[280px]'
+									>
+										{/* Step Number */}
+										<div className='text-6xl md:text-7xl font-light text-primary/10 absolute -top-4 -left-4'>
+											{String(index + 1).padStart(2, "0")}
 										</div>
 
-										{/* Title */}
-										<h3 className='text-xl font-light text-foreground mb-4 text-center'>{step.title}</h3>
+										{/* Content */}
+										<div className='relative z-10'>
+											{/* Icon */}
+											<div className='flex justify-center mb-6'>
+												<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center'>
+													<IconComponent className='h-8 w-8 text-primary' />
+												</div>
+											</div>
 
-										{/* Description */}
-										<p className='text-foreground/70 text-sm leading-relaxed text-center'>{step.description}</p>
+											{/* Title */}
+											<h3 className='text-xl font-light text-foreground mb-4 text-center'>{step.title}</h3>
+
+											{/* Description */}
+											<p className='text-foreground/70 text-sm leading-relaxed text-center'>{step.description}</p>
+										</div>
+
+										{/* Connector Line */}
+										{index < 3 && <div className='hidden lg:block absolute top-32 -right-8 w-16 h-px bg-primary/20'></div>}
 									</div>
+								);
+							})}
+						</div>
+						<div className='md:col-span-2 lg:col-span-4 flex justify-center gap-8 lg:gap-x-16'>
+							{processSteps.slice(4).map((step, index) => {
+								const IconComponent = step.icon;
+								const actualIndex = index + 4;
+								return (
+									<div
+										key={actualIndex}
+										className='relative w-full max-w-[280px]'
+									>
+										{/* Step Number */}
+										<div className='text-6xl md:text-7xl font-light text-primary/10 absolute -top-4 -left-4'>
+											{String(actualIndex + 1).padStart(2, "0")}
+										</div>
 
-									{/* Connector Line */}
-									{index < processSteps.length - 1 && index % 4 !== 3 && (
-										<div className='hidden lg:block absolute top-32 -right-4 w-8 h-px bg-primary/20'></div>
-									)}
-								</div>
-							);
-						})}
+										{/* Content */}
+										<div className='relative z-10'>
+											{/* Icon */}
+											<div className='flex justify-center mb-6'>
+												<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center'>
+													<IconComponent className='h-8 w-8 text-primary' />
+												</div>
+											</div>
+
+											{/* Title */}
+											<h3 className='text-xl font-light text-foreground mb-4 text-center'>{step.title}</h3>
+
+											{/* Description */}
+											<p className='text-foreground/70 text-sm leading-relaxed text-center'>{step.description}</p>
+										</div>
+
+										{/* Connector Line */}
+										{index < 2 && <div className='hidden lg:block absolute top-32 -right-8 w-16 h-px bg-primary/20'></div>}
+									</div>
+								);
+							})}
+						</div>
 					</div>
 				</div>
-
 			</div>
 		</section>
 	);
