@@ -1,38 +1,39 @@
 import {Heart, Camera, Award, Lightbulb, Star, Quote} from "lucide-react";
 import type {SectionProps} from "@/types";
+import Image from "next/image";
 
 const storyHighlights = [
 	{
-		icon: Camera,
-		title: "The Beginning",
+		number: "01",
+		title: "THE BEGINNING",
 		content:
 			"I discovered my passion for photography by capturing special moments in my community. What started as a creative gift quickly became a meaningful calling, turning artistic vision into a professional journey of preserving life's most precious moments.",
 		image: "https://images.pexels.com/photos/45718/pexels-photo-45718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 	},
 	{
-		icon: Heart,
-		title: "The Reward",
+		number: "02",
+		title: "THE REWARD",
 		content:
 			"The most fulfilling part of my photography career is witnessing the pure joy on my clients' faces when they see their photos for the first time—knowing I've helped preserve moments they'll treasure for a lifetime.",
 		image: "https://images.pexels.com/photos/360624/pexels-photo-360624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 	},
 	{
-		icon: Lightbulb,
-		title: "My Style",
+		number: "03",
+		title: "MY STYLE",
 		content:
 			"My photography style is clean, emotional, and storytelling-focused. Over the years, it has evolved to become more refined and intentional, blending natural light with artistic composition to capture timeless, authentic moments.",
 		image: "https://images.pexels.com/photos/821749/pexels-photo-821749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 	},
 	{
-		icon: Award,
-		title: "The Experience",
+		number: "04",
+		title: "THE EXPERIENCE",
 		content:
 			"With over 10 years of hands-on experience, I bring a strong eye for detail and expert skills in lighting, editing, and composition. My ability to connect with clients and capture genuine emotions sets my work apart.",
 		image: "https://images.pexels.com/photos/8321286/pexels-photo-8321286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 	},
 	{
-		icon: Star,
-		title: "My Values",
+		number: "05",
+		title: "MY VALUES",
 		content:
 			"Storytelling and connection are at the heart of everything I do. I'm passionate about capturing real emotions and meaningful moments that reflect each couple's unique story. Trust, creativity, and respect guide every session.",
 		image: "https://images.pexels.com/photos/7272219/pexels-photo-7272219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -64,49 +65,39 @@ export default function AboutQA({className}: SectionProps) {
 				</div>
 
 				{/* Story Highlights */}
-				<div className='mb-20'>
-					<div className='grid gap-16'>
+				<div className='mb-20 max-w-4xl mx-auto'>
+					<div className='space-y-16'>
 						{storyHighlights.map((item, index) => {
-							const IconComponent = item.icon;
 							const isEven = index % 2 === 0;
 
 							return (
 								<div
 									key={index}
-									className={`grid lg:grid-cols-3 gap-16 items-center ${isEven ? "" : "lg:direction-rtl"}`}
+									className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
 								>
-									{/* Content */}
-									<div className={`lg:col-span-2 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-										<div className='space-y-8'>
-											<div>
-												<h3 className='text-4xl font-light tracking-wide text-foreground mb-4'>{item.title}</h3>
-												<div className='h-px w-16 bg-primary/30 mb-6'></div>
-											</div>
-
-											<div className='space-y-6 text-base leading-relaxed text-foreground/70'>
-												<p className='text-lg font-light leading-relaxed'>{item.content}</p>
-											</div>
-
-											{/* Icon */}
-											{/* <div className='flex justify-center lg:justify-start'>
-												<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center'>
-													<IconComponent className='h-7 w-7 text-primary' />
-												</div>
-											</div> */}
+									{/* Image Section */}
+									<div className={`relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+										<div className='aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg'>
+											<Image
+												src={item.image}
+												alt={`Photography representing ${item.title.toLowerCase()}`}
+												width={600}
+												height={450}
+												className='w-full h-full object-cover'
+											/>
 										</div>
 									</div>
 
-									{/* Visual Element */}
-									<div className={`lg:col-span-1 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-										<div className='h-[300px] w-[300px] overflow-hidden rounded-lg shadow-2xl max-w-xs mx-auto relative'>
-											<img
-												src={item.image}
-												alt={`Photography representing ${item.title.toLowerCase()}`}
-												className='h-full w-full object-cover opacity-60 hover:scale-105 transition-transform duration-700'
-											/>
-											{/* Dark overlay with gradient */}
-											<div className='absolute inset-0 bg-gradient-to-b from-transparent to-primary/60'></div>
-										</div>
+									{/* Content Section */}
+									<div className={`space-y-6 ${isEven ? "lg:order-2 text-left" : "lg:order-1 text-right"}`}>
+										{/* Number */}
+										<div className='text-4xl italic md:text-5xl font-light text-primary leading-none'>{item.number}</div>
+
+										{/* Heading */}
+										<h3 className='text-2xl md:text-3xl font-light text-foreground tracking-wide'>{item.title}</h3>
+
+										{/* Description */}
+										<p className='text-foreground/70 leading-relaxed text-lg max-w-md'>{item.content}</p>
 									</div>
 								</div>
 							);
