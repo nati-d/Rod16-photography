@@ -1,6 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {Quote, Award, Camera, Heart, MapPin, Calendar, Users} from "lucide-react";
 import type {SectionProps} from "@/types";
+import Link from "next/link";
 
 interface AboutSectionProps extends SectionProps {
 	variant?: "homepage" | "page";
@@ -184,15 +185,19 @@ export default function AboutSection({className, variant = "homepage"}: AboutSec
 
 						{/* Enhanced Call to Action */}
 						<div className='flex flex-col sm:flex-row gap-4'>
-							<Button
-								variant='outline'
-								className='border-primary/10 bg-background/80 backdrop-blur-sm px-8 py-4 text-foreground/60 hover:bg-primary/10 hover:border-primary/20 hover:shadow-lg transition-all duration-300 font-medium tracking-wider'
-							>
-								LEARN MORE ABOUT ME
-							</Button>
-							<Button className='bg-primary hover:bg-primary/80 text-background px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 font-medium tracking-wider'>
-								VIEW MY WORK
-							</Button>
+							<Link href='/about'>
+								<Button
+									variant='outline'
+									className='border-primary/10 bg-background/80 backdrop-blur-sm px-8 py-4 text-foreground/60 hover:bg-primary/10 hover:border-primary/20 hover:shadow-lg transition-all duration-300 font-medium tracking-wider'
+								>
+									LEARN MORE ABOUT ME
+								</Button>
+							</Link>
+							<Link href='/portfolio'>
+								<Button className='bg-primary hover:bg-primary/80 text-background px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 font-medium tracking-wider'>
+									VIEW MY WORK
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</div>
