@@ -154,7 +154,7 @@ export default function AboutQA({className}: SectionProps) {
 				</div>
 
 				{/* Philosophy Section */}
-				<div className='bg-secondary/20 rounded-lg p-12 lg:p-16 mb-20'>
+				{/* <div className='bg-secondary/20 rounded-lg p-12 lg:p-16 mb-20'>
 					<div className='text-center mb-12'>
 						<Quote className='h-8 w-8 text-primary mb-4 mx-auto' />
 						<h3 className='text-3xl font-light tracking-wide text-foreground mb-6'>My Photography Philosophy</h3>
@@ -201,11 +201,11 @@ export default function AboutQA({className}: SectionProps) {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 
 				{/* Call to Action */}
 				<div className='text-center'>
-					<div className='inline-block bg-background/80 backdrop-blur-sm rounded-lg p-8 shadow-sm border border-secondary/20'>
+					<div className='inline-block bg-transparent backdrop-blur-sm rounded-lg p-8  '>
 						<p className='text-lg font-light text-foreground/70 mb-6 leading-relaxed'>
 							Ready to tell your love story? Let's create something beautiful together.
 						</p>
